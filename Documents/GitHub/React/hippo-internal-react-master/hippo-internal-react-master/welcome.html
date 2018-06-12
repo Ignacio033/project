@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html" xmlns:pe="http://xmlns.oracle.com/adf/pageeditor" xmlns:cust="http://xmlns.oracle.com/adf/faces/customizable" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:wcdc="http://xmlns.oracle.com/webcenter/spaces/taglib">
+    <jsp:directive.page contentType="text/html;charset=utf-8"/>
+    <f:view>
+        <af:document title="#{uib_o_w_w_r_WebCenter.LABEL_WEBCENTER_WELCOME_PAGE} " id="LandingDocument">
+            <f:facet name="metaContainer">
+                <af:group id="g1">
+                    <trh:script id="edvkloastar73" text="              function setFocusOnUserName()              {                AdfPage.PAGE.findComponent('LandingForm').setVisible(true);                document.getElementById('username').focus();                       var userNameInput = document.getElementById('username');                var bEditMode     = document.getElementById('T:main_panel::edit');                if (userNameInput &amp;&amp; !bEditMode) {                  wcSetUserNameFromCookie(userNameInput);                }                if (window.addEventListener){                  window.addEventListener('unload', wcStoreUserNameToCookie, false);                } else if (window.attachEvent){                  window.attachEvent('onunload', wcStoreUserNameToCookie);                }              }            "/>
+                </af:group>
+            </f:facet>
+            <af:clientListener type="load" method="setFocusOnUserName"/>
+            <af:form id="LandingForm" clientComponent="true">
+                <af:pageTemplate value="#{bindings.shellTemplateBinding.templateModel}" id="T">
+                    <f:attribute name="pageTitle" value="#{WCAppContext.currentScope.default ?                                  WCAppContext.application.applicationConfig.title                               : WCAppContext.currentScope.space ?                                  spaceContext.space[WCAppContext.currentScope.name].GSMetadata.displayName                               : spaceTemplateManager.template[WCAppContext.currentScope.name].metadata.displayName}"/>
+                    <f:facet name="content">
+                        <pe:pageCustomizable id="pcl1" designViews="#{o_w_w_i_v_b_webCenterViewUtilsBean.systemPageDesignViews}">
+                            <af:panelGroupLayout id="scroller" layout="scroll" clientComponent="true" styleClass="#{pageDocBean.CSSStyle}  WCSystemPage">
+                                <af:panelGroupLayout layout="vertical" styleClass="" id="wrapper">
+                                    <af:panelGroupLayout layout="vertical" styleClass="CenterboxContainer" id="container">
+                                        <af:panelGroupLayout layout="vertical" styleClass="ContentBox" id="contentbox">
+                                            <af:panelGroupLayout layout="vertical" styleClass="" id="loginform" halign="center">
+                                                <af:panelGroupLayout layout="vertical" styleClass="LogoImageDiv" id="logoct">
+                                                    <af:image source="/../wcstatic/dpg/img/HEWAR Logo.png" shortDesc="#{uib_o_w_w_r_WebCenter.LABEL_WEBCENTER_SPACES}" id="wclogo" styleClass="WCLoginProductIcon"/>
+
+
+                                                    <f:verbatim>
+                                                        <!--<div>hello 2</div>-->
+                                                        <style>
+                                                            .main-login input {
+                                                                border: none;
+                                                                border-bottom: 2px solid #333;
+                                                                background: white !important;
+                                                                line-height: 40px;
+                                                                height: 41px;
+                                                                margin-bottom: 30px;
+                                                                border-radius: 0;
+                                                                width: 300px;
+                                                                padding: 0 10px;
+
+                                                            }
+                                                            .main-login .LoginLabel {
+                                                                display: none;
+
+                                                            }
+                                                            .main-login .Password {
+                                                                display: none;
+
+                                                            }
+
+                                                            .main-login .loginbtn {
+                                                                background: #db2a1d !important;
+                                                                border-radius: 25px !important;
+                                                                color: white !important;
+                                                                text-transform: uppercase;
+                                                                padding: 0 40px !important;
+                                                                width: auto !important;
+                                                                border: none !important;
+                                                                font-weight: 500 !important;
+                                                                letter-spacing: 1px;
+                                                            }
+                                                        </style>
+                                                    </f:verbatim>
+                                                </af:panelGroupLayout>
+                                                <af:region id="loginRegion" styleClass="main-login" value="#{bindings.loginRegion.regionModel}"/>
+                                            </af:panelGroupLayout>
+                                        </af:panelGroupLayout>
+                                    </af:panelGroupLayout>
+                                </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                            <f:facet name="editor">
+                                <pe:pageEditorPanel id="pep1"/>
+                            </f:facet>
+                        </pe:pageCustomizable>
+                    </f:facet>
+                </af:pageTemplate>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

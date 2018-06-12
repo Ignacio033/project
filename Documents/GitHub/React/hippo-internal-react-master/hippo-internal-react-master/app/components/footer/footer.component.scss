@@ -1,0 +1,93 @@
+@import "./../../global/colors";
+
+[component="footer"] {
+  flex: 0 0 auto;
+  position: relative;
+  z-index: 10;
+  margin-top: 60px;
+
+  display: flex;
+  flex-direction: column;
+
+  //background-color: $primary;
+  color: #ffffff;
+
+  //height: 115px;
+
+  //height: 500px;
+  //border-top:3px solid $primary;
+  background: #333;
+  padding-bottom: 10px;
+
+  .footer-icons {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin-top: 60px;
+    margin-left: -40px;
+
+    color: white;
+
+    &:hover {
+      color: rgba(255,255,255,0.5);
+    }
+
+    .footer-icon {
+      //color: white;
+      font-size: 35px;
+      margin-left: 40px;
+      transition: .15s;
+
+      &:hover {
+        color: rgba(255,255,255,1);
+      }
+    }
+  }
+
+  .footer-link-list {
+    margin-top: 60px;
+    flex: 1 1 300px;
+    display: flex;
+    flex-direction: column;
+
+    .link-header {
+      font-size: 30px;
+      font-weight: 200;
+      //margin-bottom: 20px;
+    }
+
+    .link-item {
+      margin-top: 10px;
+      font-weight: 400;
+      font-size: 18px;
+      transition: .15s;
+      color: rgba(255,255,255,0.6);
+      width: fit-content;
+
+      &:hover {
+        color: white;
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 60px;
+    border-top: 1px solid rgba(255,255,255,0.15);
+    padding-top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .bottom-link {
+      padding: 0 20px;
+      font-weight: 600;
+      font-size: 12px;
+      //font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 40px;
+
+    }
+  }
+}
